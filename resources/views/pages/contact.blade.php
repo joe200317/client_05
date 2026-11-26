@@ -173,11 +173,13 @@
             </div>
         </section>
 
-        <section class="contact-paths section-pad">
+        <section class="contact-paths">
+            <x-home.leaf class="contact-botanical-leaf contact-botanical-leaf--paths" />
+            <x-home.leaf class="contact-botanical-leaf contact-botanical-leaf--paths-right" />
             <div class="section-container">
-                <header class="section-heading reveal">
+                <header class="section-heading contact-paths-heading reveal">
                     <p class="section-kicker">Choose a starting point</p>
-                    <h2>Every conversation can begin differently</h2>
+                    <h2 class="text-theme-gradient">Every conversation can begin differently</h2>
                 </header>
 
                 <div class="contact-path-grid">

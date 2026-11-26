@@ -462,6 +462,24 @@
     transform: rotate(-12deg);
 }
 
+.testimonials-botanical-leaf--reflections-top {
+    top: 4%;
+    right: 18%;
+    width: 88px;
+    color: #7a9a5f;
+    opacity: .18;
+    transform: rotate(16deg);
+}
+
+.testimonials-botanical-leaf--reflections-right {
+    top: 22%;
+    right: -22px;
+    width: 110px;
+    color: #6f8d55;
+    opacity: .14;
+    transform: rotate(-8deg);
+}
+
 .reflections-heading {
     display: grid;
     grid-template-columns: 1fr minmax(280px, .55fr);

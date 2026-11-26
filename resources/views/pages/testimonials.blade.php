@@ -99,6 +99,8 @@
 
     <section class="reflections-section section-pad" id="participant-reflections">
         <x-home.leaf class="testimonials-botanical-leaf testimonials-botanical-leaf--reflections" />
+        <x-home.leaf class="testimonials-botanical-leaf testimonials-botanical-leaf--reflections-top" />
+        <x-home.leaf class="testimonials-botanical-leaf testimonials-botanical-leaf--reflections-right" />
         <div class="section-container">
             <header class="reflections-heading reveal">
                 <div>

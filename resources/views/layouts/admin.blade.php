@@ -486,6 +486,7 @@
     @vite([
         'resources/css/components/theme-dropdown.css',
         'resources/css/components/media-upload.css',
+        'resources/css/components/password-toggle.css',
         'resources/js/admin-boot.js',
     ])
     @stack('styles')

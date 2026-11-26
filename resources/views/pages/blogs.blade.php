@@ -83,8 +83,9 @@
             </div>
         </section>
 
-        <section class="blogs-practice section-pad">
+        <section class="blogs-practice">
             <x-home.leaf class="blogs-botanical-leaf blogs-botanical-leaf--practice" />
+            <x-home.leaf class="blogs-botanical-leaf blogs-botanical-leaf--practice-right" />
             <div class="section-container blogs-practice-grid">
                 <div class="blogs-practice-copy reveal">
                     <p class="section-kicker">One practice at a time</p>

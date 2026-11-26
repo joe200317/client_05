@@ -116,9 +116,84 @@
     </div>
 </div>
 
+<div
+    class="session-toast"
+    id="sessionBookingToast"
+    role="status"
+    aria-live="polite"
+    hidden
+>
+    <span class="session-toast__icon" aria-hidden="true">✓</span>
+    <div class="session-toast__copy">
+        <strong>Thank you!</strong>
+        <p>Your session request has been submitted. We will contact you shortly.</p>
+    </div>
+</div>
+
 <style>
     body.session-modal-open {
         overflow: hidden;
+    }
+
+    .session-toast {
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
+        z-index: 1400;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        max-width: min(92vw, 380px);
+        padding: 14px 16px;
+        color: #24392a;
+        background: #fff;
+        border: 1px solid #d7e4cc;
+        border-radius: 14px;
+        box-shadow: 0 16px 40px rgba(24, 38, 27, .18);
+        opacity: 0;
+        transform: translateY(12px);
+        pointer-events: none;
+        transition: opacity .24s ease, transform .24s ease;
+    }
+
+    .session-toast.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .session-toast[hidden] {
+        display: none !important;
+    }
+
+    .session-toast.is-visible[hidden] {
+        display: flex !important;
+    }
+
+    .session-toast__icon {
+        display: grid;
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+        place-items: center;
+        border-radius: 50%;
+        color: #fff;
+        background: linear-gradient(100deg, #2d7542, #80a947);
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .session-toast__copy strong {
+        display: block;
+        margin: 0 0 3px;
+        font-size: 14px;
+    }
+
+    .session-toast__copy p {
+        margin: 0;
+        color: #5d6e5e;
+        font-size: 13px;
+        line-height: 1.45;
     }
 
     .session-modal {
@@ -598,14 +673,15 @@
                 });
 
                 form.reset();
+                form.querySelectorAll('select[data-theme-dropdown]').forEach((select) => {
+                    select.dispatchEvent(new Event('change', { bubbles: true }));
+                });
 
-                if (feedback) {
-                    feedback.hidden = false;
-                    feedback.textContent = payload.message || 'Your session request has been submitted successfully.';
-                }
-
-                // Keep locked briefly after success to avoid accidental re-send, then unlock.
-                setTimeout(unlock, 1200);
+                closeModal();
+                unlock();
+                showSessionToast(
+                    payload.message || 'Your session request has been submitted. We will contact you shortly.'
+                );
             } catch (error) {
                 if (feedback) {
                     feedback.hidden = false;
@@ -614,5 +690,28 @@
                 unlock();
             }
         });
+
+        const toast = document.getElementById('sessionBookingToast');
+        let toastTimer = null;
+
+        const showSessionToast = (message) => {
+            if (!toast) return;
+
+            const copy = toast.querySelector('.session-toast__copy p');
+            if (copy && message) {
+                copy.textContent = message;
+            }
+
+            toast.hidden = false;
+            requestAnimationFrame(() => toast.classList.add('is-visible'));
+
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.remove('is-visible');
+                setTimeout(() => {
+                    toast.hidden = true;
+                }, 250);
+            }, 5200);
+        };
     });
 </script>

@@ -596,7 +596,39 @@
 }
 
 .contact-paths {
+    position:relative;
+    overflow:hidden;
+    padding:clamp(40px,5vw,64px) 0;
     background:linear-gradient(115deg,#eef5e6,#f7f8ef 64%,#f2eddb);
+}
+
+.contact-botanical-leaf--paths {
+    left:-22px;
+    top:18%;
+    width:100px;
+    color:#718d5d;
+    opacity:.14;
+    transform:rotate(-14deg);
+}
+
+.contact-botanical-leaf--paths-right {
+    right:-18px;
+    bottom:12%;
+    width:112px;
+    color:#7a9a5f;
+    opacity:.12;
+    transform:rotate(18deg);
+}
+
+.contact-paths-heading {
+    max-width:640px;
+    margin:0 auto 28px;
+}
+
+.contact-paths-heading h2 {
+    font-size:clamp(24px,2.8vw,34px);
+    line-height:1.15;
+    letter-spacing:-.4px;
 }
 
 .contact-path-grid {
@@ -606,8 +638,8 @@
 }
 
 .contact-path-card {
-    min-height:230px;
-    padding:28px;
+    min-height:0;
+    padding:22px;
     background:rgba(255,255,255,.72);
     border:1px solid #dfe8d6;
     border-radius:18px;
@@ -621,15 +653,15 @@
 }
 
 .contact-path-card h3 {
-    margin:26px 0 9px;
+    margin:16px 0 8px;
     color:#30472f;
     font-family:var(--font-heading);
-    font-size:22px;
+    font-size:18px;
 }
 
 .contact-path-card p {
-    min-height:46px;
-    margin:0 0 18px;
+    min-height:0;
+    margin:0 0 14px;
     color:var(--muted);
     font-size:12px;
     line-height:1.65;

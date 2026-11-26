@@ -959,23 +959,23 @@
 
 .program-approach-card {
     display:grid;
-    grid-template-columns:84px 1fr;
+    grid-template-columns:56px 1fr;
     align-items:center;
-    gap:28px;
-    min-height:210px;
-    padding:38px;
+    gap:18px;
+    min-height:0;
+    padding:22px 24px;
     background:
         radial-gradient(circle at 88% 12%,rgba(229,218,153,.22),transparent 24%),
         linear-gradient(125deg,#285f39,#467b45 58%,#6f8b4c);
-    border:5px solid rgba(255,255,255,.72);
-    border-radius:24px;
-    box-shadow:0 20px 50px rgba(45,74,36,.14);
+    border:4px solid rgba(255,255,255,.72);
+    border-radius:18px;
+    box-shadow:0 14px 34px rgba(45,74,36,.12);
 }
 
 .program-approach-icon {
     display:grid;
-    width:84px;
-    height:84px;
+    width:56px;
+    height:56px;
     place-items:center;
     color:#fff;
     background:rgba(255,255,255,.12);
@@ -984,8 +984,8 @@
 }
 
 .program-approach-icon svg {
-    width:50px;
-    height:50px;
+    width:30px;
+    height:30px;
     stroke:currentColor;
     stroke-width:1.5;
     stroke-linecap:round;
@@ -994,15 +994,17 @@
 
 .program-approach-card .section-kicker {
     color:#dce8cf;
+    margin-bottom:6px;
+    font-size:9px;
 }
 
 .program-approach-card h2 {
-    max-width:850px;
+    max-width:720px;
     margin:0;
     color:#fff;
     font-family:var(--font-heading);
-    font-size:clamp(28px,3.5vw,42px);
-    line-height:1.16;
+    font-size:clamp(18px,2.2vw,24px);
+    line-height:1.25;
 }
 
 .program-offers-section {
@@ -1196,13 +1198,13 @@
     }
 
     .program-approach-card {
-        grid-template-columns:72px 1fr;
-        padding:32px 28px;
+        grid-template-columns:52px 1fr;
+        padding:20px 22px;
     }
 
     .program-approach-icon {
-        width:72px;
-        height:72px;
+        width:52px;
+        height:52px;
     }
 }
 
@@ -1219,17 +1221,17 @@
 
     .program-approach-card {
         grid-template-columns:1fr;
-        gap:20px;
-        padding:28px 22px;
+        gap:14px;
+        padding:18px 16px;
     }
 
     .program-approach-icon {
-        width:64px;
-        height:64px;
+        width:48px;
+        height:48px;
     }
 
     .program-approach-card h2 {
-        font-size:27px;
+        font-size:18px;
     }
 
     .program-offer-card {

@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    @vite(['resources/css/components/password-toggle.css', 'resources/js/password-toggle-boot.js'])
 
     <style>
         * { box-sizing: border-box; }
@@ -92,7 +93,8 @@
         }
 
         input[type="email"],
-        input[type="password"] {
+        input[type="password"],
+        input[type="text"] {
             width: 100%;
             padding: 13px 14px;
             border: 1px solid #dce6d2;
@@ -100,6 +102,10 @@
             outline: none;
             font: inherit;
             font-size: 14px;
+            background: #fbfcf9;
+        }
+
+        .password-field input {
             background: #fbfcf9;
         }
 
