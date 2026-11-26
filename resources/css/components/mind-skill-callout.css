@@ -1,0 +1,230 @@
+.mind-skill-callout {
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    width: max-content;
+    align-items: center;
+    color: #34452f;
+    --mind-skill-node-width: 92px;
+    --mind-skill-image-width: 68px;
+    --mind-skill-image-height: 52px;
+    --mind-skill-line-cap: 34px;
+}
+
+.mind-skill-callout--image-left {
+    flex-direction: row-reverse;
+}
+
+.mind-skill-orbit-node {
+    box-sizing: border-box;
+    display: grid;
+    width: var(--mind-skill-node-width);
+    min-height: 50px;
+    align-content: center;
+    gap: 1px;
+    padding: 5px 7px;
+    background: rgba(255, 255, 255, .96);
+    border: 1px solid rgba(119, 151, 99, .28);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(44, 70, 35, .1);
+}
+
+.mind-skill-orbit-meta {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #829475;
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: .6px;
+}
+
+.mind-skill-orbit-icon {
+    display: grid;
+    width: 14px;
+    height: 14px;
+    flex: 0 0 14px;
+    place-items: center;
+    color: var(--mind-skill-accent);
+}
+
+.mind-skill-orbit-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.mind-skill-orbit-node strong {
+    color: #34452f;
+    font-size: 10px;
+    line-height: 1.1;
+}
+
+.mind-skill-orbit-node small {
+    overflow: hidden;
+    color: #78856f;
+    font-size: 7px;
+    line-height: 1.2;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mind-skill-connector {
+    position: relative;
+    display: block;
+    width: min(var(--mind-skill-line-length, 38px), var(--mind-skill-line-cap));
+    height: 2px;
+    flex: 0 0 min(var(--mind-skill-line-length, 38px), var(--mind-skill-line-cap));
+    background: linear-gradient(90deg, rgba(69, 106, 56, .55), rgba(69, 106, 56, .82));
+}
+
+.mind-skill-connector::before,
+.mind-skill-connector::after {
+    position: absolute;
+    top: 50%;
+    width: 5px;
+    height: 5px;
+    background: #456a38;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    content: "";
+    transform: translateY(-50%);
+}
+
+.mind-skill-connector::before {
+    left: -2px;
+}
+
+.mind-skill-connector::after {
+    right: -2px;
+}
+
+.mind-skill-image-card {
+    box-sizing: border-box;
+    display: grid;
+    width: var(--mind-skill-image-width);
+    height: var(--mind-skill-image-height);
+    flex: 0 0 var(--mind-skill-image-width);
+    overflow: hidden;
+    place-items: center;
+    background: var(--mind-skill-soft);
+    border: 2px solid rgba(255, 255, 255, .94);
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(44, 70, 35, .16);
+}
+
+.mind-skill-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mind-skill-image-card--memory img {
+    background: #eef3e8;
+    object-fit: cover;
+    object-position: center;
+}
+
+.mind-skill-image-card--growth img {
+    object-position: center 62%;
+}
+
+.mind-skill-image-card svg {
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    color: var(--mind-skill-accent);
+    background:
+        radial-gradient(circle at 75% 22%, rgba(255, 255, 255, .72) 0 5px, transparent 5.5px),
+        var(--mind-skill-soft);
+    box-sizing: border-box;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.mind-skill-callout--focus {
+    --mind-skill-accent: #4a7944;
+    --mind-skill-soft: #e6f0df;
+}
+
+.mind-skill-callout--memory {
+    --mind-skill-accent: #74804a;
+    --mind-skill-soft: #f0efd9;
+}
+
+.mind-skill-callout--learning {
+    --mind-skill-accent: #a06f45;
+    --mind-skill-soft: #f6ebdc;
+}
+
+.mind-skill-callout--growth {
+    --mind-skill-accent: #4d806a;
+    --mind-skill-soft: #e1efe8;
+}
+
+@media (max-width: 650px) {
+    .mind-skill-callout {
+        --mind-skill-node-width: 72px;
+        --mind-skill-image-width: 54px;
+        --mind-skill-image-height: 42px;
+        --mind-skill-line-cap: 16px;
+    }
+
+    .mind-skill-orbit-node {
+        min-height: 42px;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    .mind-skill-orbit-icon {
+        width: 12px;
+        height: 12px;
+        flex-basis: 12px;
+    }
+
+    .mind-skill-orbit-node strong {
+        font-size: 10px;
+    }
+
+    .mind-skill-orbit-node small {
+        font-size: 7px;
+    }
+
+    .mind-skill-image-card {
+        border-width: 2px;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .mind-skill-callout {
+        --mind-skill-node-width: 62px;
+        --mind-skill-image-width: 46px;
+        --mind-skill-image-height: 36px;
+        --mind-skill-line-cap: 8px;
+    }
+
+    .mind-skill-orbit-node {
+        min-height: 38px;
+        padding: 3px 4px;
+    }
+
+    .mind-skill-orbit-icon {
+        width: 10px;
+        height: 10px;
+        flex-basis: 10px;
+    }
+
+    .mind-skill-orbit-node strong {
+        font-size: 8px;
+    }
+
+    .mind-skill-orbit-node small {
+        display: none;
+    }
+}

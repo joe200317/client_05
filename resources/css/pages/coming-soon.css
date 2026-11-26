@@ -1,0 +1,14 @@
+/* Shared placeholder-page styles */
+
+
+/* Separate page placeholders */
+.page-placeholder { position: relative; display: grid; min-height: calc(100vh - 78px); place-items: center; overflow: hidden; padding: 70px 6%; background: linear-gradient(120deg, #f3f6eb, #e6efd9); text-align: center; }
+.page-placeholder-orb { position: absolute; width: min(70vw, 650px); aspect-ratio: 1; border: 1px solid rgba(63,96,49,.13); border-radius: 50%; box-shadow: 0 0 0 48px rgba(63,96,49,.025), 0 0 0 96px rgba(63,96,49,.02); }
+.page-placeholder-content { position: relative; max-width: 650px; }
+.page-placeholder-content h1 { margin: 0; font-family: var(--font-heading); font-size: clamp(42px, 6vw, 68px); line-height: 1.05; }
+.page-placeholder-content > p:not(.section-kicker) { color: var(--muted); font-size: 16px; line-height: 1.75; }
+.page-placeholder-content .placeholder-note { margin: 20px auto 28px; font-size: 13px; }
+
+@media (max-width: 600px) {
+    .page-placeholder { min-height: calc(100vh - 68px); }
+}
